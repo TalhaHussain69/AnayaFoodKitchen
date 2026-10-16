@@ -1,0 +1,98 @@
+/* ==========================================================================
+   REVIEW POPUP
+   ========================================================================== */
+.rv-overlay{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(16,28,36,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.rv-overlay.open{display:flex;animation:rvFade .3s ease both}
+.rv-overlay.closing{animation:rvFadeOut .25s ease both}
+@keyframes rvFade{from{opacity:0}to{opacity:1}}
+@keyframes rvFadeOut{to{opacity:0}}
+
+.rv-box{position:relative;width:min(520px,100%);max-height:94vh;overflow:auto;border-radius:26px;background:#fff;color:var(--color-navy);box-shadow:0 30px 80px rgba(0,0,0,.45);animation:rvIn .6s cubic-bezier(.2,.9,.3,1.15) both;scrollbar-width:thin}
+.rv-overlay.closing .rv-box{animation:rvOut .25s ease both}
+@keyframes rvIn{0%{opacity:0;transform:translateY(60px) scale(.86) rotateX(10deg)}60%{opacity:1;transform:translateY(-6px) scale(1.01)}100%{transform:none}}
+@keyframes rvOut{to{opacity:0;transform:translateY(26px) scale(.94)}}
+
+/* header */
+.rv-head{position:relative;overflow:hidden;padding:1.7rem 1.6rem 1.4rem;background:linear-gradient(135deg,#FE7743,#E5622E);color:#fff}
+.rv-head h3{position:relative;font-family:var(--font-serif);font-size:1.5rem;line-height:1.25}
+.rv-head p{position:relative;margin-top:.3rem;font-size:.92rem;color:rgba(255,255,255,.9)}
+.rv-head .rv-bgstar{position:absolute;color:rgba(255,255,255,.2);animation:rvTwinkle 3.4s ease-in-out infinite}
+.rv-head .s1{top:-14px;right:36px;width:70px;height:70px}
+.rv-head .s2{bottom:-18px;right:-8px;width:90px;height:90px;animation-delay:-1.2s;animation-direction:reverse}
+.rv-head .s3{top:16px;right:120px;width:22px;height:22px;animation-delay:-2s}
+[dir=rtl] .rv-head .s1{right:auto;left:36px}[dir=rtl] .rv-head .s2{right:auto;left:-8px}[dir=rtl] .rv-head .s3{right:auto;left:120px}
+@keyframes rvTwinkle{0%,100%{transform:rotate(0) scale(1);opacity:.6}50%{transform:rotate(25deg) scale(1.2);opacity:1}}
+.rv-close{position:absolute;top:.8rem;right:.8rem;z-index:3;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.22);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer;transition:transform .35s cubic-bezier(.3,1.5,.5,1),background .2s,color .2s}
+[dir=rtl] .rv-close{right:auto;left:.8rem}
+.rv-close:hover{transform:rotate(90deg) scale(1.08);background:#fff;color:var(--color-orange)}
+[dir=rtl] .rv-head h3{font-family:var(--font-urdu),var(--font-serif);line-height:1.7}
+[dir=rtl] .rv-head p{font-family:var(--font-urdu),var(--font-sans);line-height:1.9}
+
+/* form */
+.rv-form{padding:1.4rem 1.6rem 1.7rem;display:flex;flex-direction:column;gap:1rem}
+.rv-form>*{animation:rvRise .5s cubic-bezier(.2,.9,.3,1) both;animation-delay:calc(.25s + var(--n,0)*.07s)}
+@keyframes rvRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rv-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.rv-field{display:flex;flex-direction:column;gap:.35rem;min-width:0}
+.rv-field label,.rv-lbl{font-size:.8rem;font-weight:700;color:var(--color-navy)}
+.rv-field label i{color:var(--color-orange);font-style:normal}
+.rv-field input,.rv-field select,.rv-field textarea{width:100%;font:500 .95rem var(--font-sans);color:var(--color-navy);background:#FAF9F7;border:1.5px solid #E7E2D9;border-radius:12px;padding:.7rem .85rem;outline:none;transition:border-color .2s,box-shadow .25s,background .2s,transform .2s}
+.rv-field textarea{resize:vertical;min-height:98px;line-height:1.55}
+.rv-field input:focus,.rv-field select:focus,.rv-field textarea:focus{border-color:var(--color-orange);background:#fff;box-shadow:0 0 0 4px rgba(254,119,67,.15);transform:translateY(-1px)}
+.rv-field.err input,.rv-field.err textarea{border-color:#E5484D;background:#FFF6F6}
+.rv-field.err{animation:rvShake .42s}
+@keyframes rvShake{20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+[dir=rtl] .rv-field label,[dir=rtl] .rv-lbl,[dir=rtl] .rv-field input,[dir=rtl] .rv-field select,[dir=rtl] .rv-field textarea{font-family:var(--font-urdu),var(--font-sans)}
+[dir=rtl] .rv-field label,[dir=rtl] .rv-lbl{line-height:1.9;font-size:.9rem}
+.rv-count{align-self:flex-end;font-size:.72rem;color:var(--color-navy-light)}
+
+/* stars */
+.rv-stars{display:flex;align-items:center;gap:.35rem;direction:ltr}
+.rv-star{width:42px;height:42px;padding:0;border:0;background:none;cursor:pointer;color:#D9DDE3;transition:transform .25s cubic-bezier(.3,1.6,.5,1),color .2s}
+.rv-star svg{width:100%;height:100%;display:block;filter:drop-shadow(0 2px 3px rgba(0,0,0,.08))}
+.rv-star.on{color:#FFB020}
+.rv-star:hover{transform:scale(1.2) rotate(-8deg)}
+.rv-star.pop{animation:rvPop .55s cubic-bezier(.3,1.6,.5,1) both;animation-delay:calc(var(--k)*.06s)}
+@keyframes rvPop{0%{transform:scale(.6) rotate(-30deg)}60%{transform:scale(1.3) rotate(10deg)}100%{transform:none}}
+.rv-star:focus-visible,.rv-submit:focus-visible{outline:2px solid var(--color-orange);outline-offset:3px;border-radius:10px}
+.rv-rlabel{margin-inline-start:.6rem;font-weight:700;font-size:.9rem;color:var(--color-orange);min-width:84px;transition:opacity .2s}
+[dir=rtl] .rv-stars{flex-direction:row-reverse;justify-content:flex-start}
+[dir=rtl] .rv-rlabel{font-family:var(--font-urdu),var(--font-sans)}
+
+/* submit */
+.rv-submit{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:.55rem;padding:.9rem 1.2rem;border:0;border-radius:9999px;background:var(--color-orange);color:#fff;font:700 1rem var(--font-sans);cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 10px 22px rgba(254,119,67,.35)}
+.rv-submit::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:rvShine 3.2s ease-in-out infinite}
+@keyframes rvShine{0%,55%{left:-60%}100%{left:140%}}
+.rv-submit:hover{background:var(--color-orange-hover);transform:translateY(-2px)}
+.rv-submit:active{transform:scale(.98)}
+.rv-note{text-align:center;font-size:.75rem;color:var(--color-navy-light);line-height:1.5}
+[dir=rtl] .rv-submit,[dir=rtl] .rv-note{font-family:var(--font-urdu),var(--font-sans);line-height:1.9}
+
+/* success */
+.rv-done{display:none;padding:2.4rem 1.6rem 2.2rem;text-align:center;position:relative}
+.rv-box.sent .rv-form,.rv-box.sent .rv-head{display:none}
+.rv-box.sent .rv-done{display:block}
+.rv-check{width:92px;height:92px;margin:0 auto 1.1rem;display:block}
+.rv-check circle{fill:none;stroke:var(--color-orange);stroke-width:4;stroke-dasharray:252;stroke-dashoffset:252;animation:rvDraw .7s ease forwards}
+.rv-check path{fill:none;stroke:var(--color-orange);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;animation:rvDraw .5s ease .6s forwards}
+@keyframes rvDraw{to{stroke-dashoffset:0}}
+.rv-done h3{font-family:var(--font-serif);font-size:1.6rem;margin-bottom:.4rem;opacity:0;animation:rvRise .5s ease .9s forwards}
+.rv-done p{color:var(--color-navy-muted);line-height:1.65;max-width:360px;margin:0 auto;opacity:0;animation:rvRise .5s ease 1.05s forwards}
+.rv-done .rv-submit{margin:1.4rem auto 0;max-width:220px;opacity:0;animation:rvRise .5s ease 1.2s forwards}
+[dir=rtl] .rv-done h3{font-family:var(--font-urdu),var(--font-serif);line-height:1.7}
+[dir=rtl] .rv-done p{font-family:var(--font-urdu),var(--font-sans);line-height:2}
+.rv-confetti{position:absolute;left:50%;top:92px;width:0;height:0;pointer-events:none}
+.rv-confetti i{position:absolute;width:12px;height:12px;color:var(--c);opacity:0;animation:rvBurst 1.3s cubic-bezier(.2,.8,.3,1) .55s forwards}
+@keyframes rvBurst{0%{opacity:1;transform:translate(0,0) scale(.3) rotate(0)}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(1.1) rotate(var(--r))}}
+
+/* footer trigger button */
+.ft-review{position:relative;display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.1rem;border-radius:9999px;border:0;background:var(--color-orange);color:#fff;font:700 .85rem var(--font-sans);cursor:pointer;animation:ftPulse 2.4s ease-out infinite;transition:background .2s,transform .2s}
+.ft-review:hover{background:var(--color-orange-hover);transform:translateY(-3px)}
+.ft-review svg{animation:rvWiggle 2.6s ease-in-out infinite;transform-origin:center}
+@keyframes rvWiggle{0%,70%,100%{transform:rotate(0) scale(1)}78%{transform:rotate(-18deg) scale(1.25)}86%{transform:rotate(14deg) scale(1.25)}94%{transform:rotate(-6deg) scale(1.1)}}
+[dir=rtl] .ft-review{font-family:var(--font-urdu),var(--font-sans);line-height:1.9}
+.ft-actions{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+
+@media (max-width:520px){.rv-row{grid-template-columns:1fr}.rv-head{padding:1.4rem 1.2rem 1.2rem}.rv-form{padding:1.2rem 1.2rem 1.5rem}.rv-star{width:38px;height:38px}}
+@media (max-width:560px){.ft-actions{justify-content:center}}
+@media (prefers-reduced-motion:reduce){.rv-box,.rv-form>*,.rv-head .rv-bgstar,.rv-submit::after,.ft-review,.ft-review svg,.rv-confetti i{animation:none!important}.rv-form>*{opacity:1}.rv-check circle,.rv-check path{animation:none;stroke-dashoffset:0}.rv-done h3,.rv-done p,.rv-done .rv-submit{animation:none;opacity:1}}

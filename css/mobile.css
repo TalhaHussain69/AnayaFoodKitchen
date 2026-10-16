@@ -1,0 +1,186 @@
+/* ==========================================================================
+   MOBILE — complete responsive pass (loaded last, so it wins over the rest)
+   Breakpoints: 1180 hamburger · 760 popup/stack · 640 phones · 400 small · 340 tiny
+   ========================================================================== */
+
+/* ---------- Global safety ---------- */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; overflow-x: clip; }
+body { overflow-x: clip; -webkit-tap-highlight-color: transparent; }
+a, button, summary, select, label, input { touch-action: manipulation; }
+img, svg, video { max-width: 100%; }
+
+/* ---------- Touch devices: no "stuck" hover states after a tap ---------- */
+@media (hover: none) {
+  .p-card:hover { transform: none; box-shadow: 0 10px 30px rgba(39, 63, 79, 0.07); }
+  .p-card:hover .p-media img { transform: none; }
+  .p-btn.explore:hover { transform: none; box-shadow: 0 4px 12px rgba(254, 119, 67, 0.28); }
+  .p-btn.explore:hover::before { left: -80%; }
+  .p-btn.explore:hover::after { width: 0; margin-inline-start: 0; opacity: 0; }
+  .p-btn.order:hover { color: var(--color-orange); transform: none; box-shadow: none; }
+  .p-btn.order:hover::before { transform: scaleX(0); }
+  /* instead, the press itself gives the feedback */
+  .p-btn.explore:active::before { left: 135%; }
+  .p-btn.order:active { color: #fff; }
+  .p-btn.order:active::before { transform: scaleX(1); }
+  .p-btn:active { transform: scale(0.96); }
+  .hero-actions-row .btn-secondary:hover { background-position: 100% 100%; color: var(--color-navy); transform: none; box-shadow: none; transition-delay: 0s; }
+  .hero-actions-row .btn-secondary:active { background-position: 0 0; color: #fff; }
+  .nav-link:hover { transform: none; }
+}
+
+/* ---------- Navbar + drawer (≤1180px: hamburger layout) ---------- */
+@media (max-width: 1180px) {
+  .navbar-wrapper { padding-top: max(0.65rem, env(safe-area-inset-top)); padding-left: max(0.85rem, env(safe-area-inset-left)); padding-right: max(0.85rem, env(safe-area-inset-right)); }
+  .mobile-hamburger { width: 42px; height: 42px; flex: none; }
+  .nav-progress { left: 20px; right: 20px; }
+
+  /* drawer: scrolls if the screen is short (landscape / small phones) and never hides behind the bar */
+  .mobile-nav-drawer {
+    height: 100vh; height: 100dvh;
+    justify-content: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding: calc(5.4rem + env(safe-area-inset-top)) 1.5rem calc(2rem + env(safe-area-inset-bottom));
+  }
+  .mobile-nav-inner { margin: auto 0; gap: 1.6rem; }
+  .mobile-nav-list { gap: 0.3rem; }
+  .mobile-nav-link { padding: 0.8rem 0.5rem; font-size: 1.3rem; border-radius: 12px; }
+  .mobile-nav-link:active { background: rgba(254, 119, 67, 0.1); }
+  .mobile-lang-toggle { height: 42px; }
+  .mobile-cta-btn { height: 50px; font-size: 1rem; justify-content: center; }
+}
+
+@media (max-width: 640px) {
+  .brand-link { gap: 0.6rem; flex: 1 1 auto; }
+  .brand-name { font-size: 1.1rem; overflow: hidden; text-overflow: ellipsis; }
+  .brand-logo-img { width: 38px; height: 38px; }
+  .nav-container { gap: 0.5rem; }
+}
+@media (max-width: 400px) {
+  .brand-logo-img { width: 36px; height: 36px; }
+  .brand-link { gap: 0.5rem; padding-inline-start: 0.3rem; }
+}
+@media (max-width: 340px) {
+  .brand-name { font-size: 1rem; }
+  .navbar-wrapper { padding-inline: 0.55rem; }
+  .mobile-hamburger { width: 38px; height: 38px; }
+}
+
+/* ---------- Hero ---------- */
+@media (max-width: 640px) {
+  .hero-screen { padding-top: 5.6rem; padding-bottom: 2rem; }
+  .hero-container { padding: 0 1.1rem; gap: 1.2rem; }
+  .eyebrow-wrapper { justify-content: center; gap: 0.6rem; }
+  .eyebrow-line { flex: none; width: 26px; }
+  .hero-eyebrow { font-size: 0.74rem; letter-spacing: 0.16em; text-align: center; }
+  .hero-actions-row { flex-direction: column; align-items: stretch; width: 100%; gap: 0.8rem; }
+  .hero-actions-row .btn { width: 100%; min-height: 52px; }
+  .hero-trust-badge { justify-content: center; text-align: center; flex-wrap: wrap; }
+  .spice-stage { width: 100%; }
+  .spice-ribbon-badge { max-width: 92%; white-space: nowrap; }
+}
+@media (max-width: 360px) {
+  .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.1em; }
+  .hero-description { font-size: 0.95rem; }
+  .spice-ribbon-badge { padding: 0.4rem 0.8rem; }
+  .ribbon-text { font-size: 0.76rem; }
+  .ribbon-leaf-left, .ribbon-leaf-right { display: none; }
+  .chip-pfa { font-size: 0.72rem; }
+}
+/* landscape phones */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero-screen { min-height: 0; height: auto; padding-top: 5.2rem; padding-bottom: 2.5rem; }
+  .scroll-cue { display: none; }
+}
+
+/* ---------- Our Products: compact 2-column grid on phones ---------- */
+@media (max-width: 640px) {
+  .products-section { padding: 4.5rem 0.9rem 3.5rem; }
+  .products-head { margin-bottom: 2rem; }
+  .products-head h2 { font-size: clamp(1.8rem, 8vw, 2.2rem); }
+  .products-head p { font-size: 0.95rem; }
+
+  .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; }
+  .p-card { border-radius: 16px; }
+  .p-media { aspect-ratio: 1 / 1.12; padding: 0.8rem 0.6rem; }
+  .p-body { padding: 0.75rem 0.65rem 0.9rem; gap: 0.2rem; }
+  .p-body h3 { font-size: 1.02rem; line-height: 1.2; }
+  .p-body p {
+    font-size: 0.78rem; line-height: 1.4; min-height: 0;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .p-actions { grid-template-columns: 1fr; gap: 0.45rem; padding-top: 0.7rem; }
+  .p-btn { padding: 0.7rem 0.4rem; font-size: 0.85rem; min-height: 42px; }
+  .p-btn.explore::after { display: none; }       /* arrow is a hover effect; no room on phones */
+  [dir="rtl"] .p-body h3, [dir="rtl"] .p-body p { line-height: 1.7; }
+}
+@media (max-width: 340px) {
+  .products-grid { gap: 0.65rem; }
+  .p-body h3 { font-size: 0.95rem; }
+  .p-btn { font-size: 0.8rem; }
+}
+
+/* ---------- Product popup (Explore) ---------- */
+@media (max-width: 760px) {
+  .pm { padding: 0.5rem; padding-top: max(0.5rem, env(safe-area-inset-top)); padding-bottom: max(0.5rem, env(safe-area-inset-bottom)); }
+  .pm-box { height: calc(100vh - 1rem); height: calc(100dvh - 1rem); max-height: 900px; border-radius: 22px; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+  .pm-close { width: 40px; height: 40px; }
+  .pm-view { padding: 1rem 0.8rem; gap: 0.7rem; }
+  .vbtns button { padding: 0.5rem 0.95rem; min-height: 36px; }
+  /* the info column must be as tall as its content, otherwise the sticky footer
+     sits in the middle of the text once you scroll */
+  .pm-box { display: block; }                   /* stacked blocks: nothing can be squashed or overlap */
+  .pm-view { min-height: max-content; }
+  .pm-side { min-height: 0; display: block; }
+  .pm-info { overflow: visible; }
+  .pm-info { padding: 1.2rem 1.1rem 0.8rem; }
+  .pm-info h3 { font-size: 1.6rem; }
+
+  /* compact sticky footer: logo + name on the left, order button on the right */
+  .pm-foot { flex-wrap: nowrap; gap: 0.7rem; padding: 0.65rem 0.9rem calc(0.65rem + env(safe-area-inset-bottom)); }
+  .mfg { gap: 0.55rem; min-width: 0; flex: 1 1 auto; }
+  .mfg-ic { width: 38px; height: 38px; flex: none; font-size: 0.85rem; }
+  .mfg small { font-size: 0.62rem; }
+  .mfg strong { font-size: 0.95rem; }
+  .mfg em { display: none; }
+  .pm-foot .p-btn { flex: none; padding: 0.75rem 1rem; font-size: 0.86rem; min-height: 44px; }
+}
+@media (max-width: 380px) {
+  .pm-foot { flex-wrap: wrap; }
+  .pm-foot .p-btn { flex: 1 1 100%; }
+}
+/* landscape phones: picture on the left, text on the right, each scrolls on its own */
+@media (max-height: 520px) and (orientation: landscape) {
+  .pm-box { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); grid-template-rows: minmax(0, 1fr); overflow: hidden; align-content: stretch; height: calc(100vh - 1rem); height: calc(100dvh - 1rem); }
+  .pm-view { padding: 0.6rem; gap: 0.3rem; }
+  .scene3d { transform: scale(0.5); margin: -3.4rem 0; }
+  .vbtns button { padding: 0.35rem 0.7rem; min-height: 32px; font-size: 0.75rem; }
+  .hint3d { display: none; }
+  .pm-side { min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
+  .pm-info { overflow-y: auto; padding: 1rem 1.1rem 0.5rem; }
+  .pm-foot { position: static; }
+}
+
+/* ---------- About / Why / Contact / Footer: tap targets & spacing ---------- */
+@media (max-width: 640px) {
+  .ct-btn { min-height: 40px; padding: 0.5rem 1rem; font-size: 0.85rem; }
+  .ct-acts { gap: 0.55rem; flex-wrap: wrap; }
+  .ct-map { min-height: 280px; }
+  .about-primary-btn { width: 100%; justify-content: center; min-height: 52px; }
+  .ft-cta-btn, .ft-review, .ft-top { min-height: 44px; }
+  .ft-actions { flex-wrap: wrap; gap: 0.7rem; }
+}
+
+/* ---------- Review popup: inputs ≥16px so iOS doesn't zoom when focusing ---------- */
+@media (max-width: 760px) {
+  .rv-overlay { padding: 0.5rem; padding-bottom: max(0.5rem, env(safe-area-inset-bottom)); }
+  .rv-box { max-height: calc(100vh - 1rem); max-height: calc(100dvh - 1rem); }
+  .rv-field input, .rv-field select, .rv-field textarea { font-size: 16px; }
+  .rv-star { width: 42px; height: 42px; }
+  .rv-close { width: 40px; height: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-btn, .p-btn::before { transition: none !important; }
+}
