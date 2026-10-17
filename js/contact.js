@@ -14,14 +14,14 @@
       addr: 'Address', addrV: 'Vehari Road Multan, Punjab, Pakistan',
       phone: 'Phone / WhatsApp', call: 'Call', wa: 'WhatsApp',
       cert: 'Certifications / Registration', pfa: 'PFA License No.', tm: 'T.M. No.',
-      map: 'Open in Google Maps', foot: '© 2026 Anaya Food Kitchen. All rights reserved.', msg: 'Assalam o Alaikum, I would like to know more about Anaya masalay.'
+      map: 'Open in Google Maps', foot: '© 2026 Anaya Food. All rights reserved.', msg: 'Assalam o Alaikum, I would like to know more about Anaya masalay.'
     },
     ur: {
       title: 'ہم سے رابطہ کریں', sub: 'تشریف لائیں، کال کریں یا واٹس ایپ پر میسج کریں۔ ہمیں آپ کی خدمت کر کے خوشی ہوگی۔',
       addr: 'پتہ', addrV: 'وہاڑی روڈ، ملتان، پنجاب، پاکستان',
       phone: 'فون / واٹس ایپ', call: 'کال', wa: 'واٹس ایپ',
       cert: 'سرٹیفیکیشن / رجسٹریشن', pfa: 'پی ایف اے لائسنس نمبر', tm: 'ٹریڈ مارک نمبر',
-      map: 'گوگل میپس میں کھولیں', foot: '© 2026 عنایہ فوڈ کچن۔ جملہ حقوق محفوظ ہیں۔', msg: 'Assalam o Alaikum, I would like to know more about Anaya masalay.'
+      map: 'گوگل میپس میں کھولیں', foot: '© 2026 عنایہ فوڈ۔ جملہ حقوق محفوظ ہیں۔', msg: 'Assalam o Alaikum, I would like to know more about Anaya masalay.'
     }
   };
 
@@ -56,7 +56,7 @@
               '<div class="ct-cert">' + I.check + '<span><small>' + t.tm + '</small><b>8391950</b></span></div>' +
             '</div></div></div>' +
           '</div>' +
-          '<div class="ct-map"><iframe title="Anaya Food Kitchen location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=' + MAP_Q + '&output=embed"></iframe>' +
+          '<div class="ct-map"><iframe title="Anaya Food location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=' + MAP_Q + '&output=embed"></iframe>' +
             '<a class="ct-map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=' + MAP_Q + '">' + I.go + t.map + '</a></div>' +
         '</div>' +
       '</div>';

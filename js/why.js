@@ -9,7 +9,7 @@
   /* ---------- Copy (English / Urdu) ---------- */
   var T = {
     en: {
-      title: 'Why Choose Anaya Food Kitchen',
+      title: 'Why Choose Anaya Food',
       sub: 'Pure spices, honest recipes and a kitchen you can trust.',
       f: [
         ['PFA Licensed', 'A licensed kitchen, so you cook with peace of mind.'],
@@ -20,7 +20,7 @@
       revT: 'What Our Customers Say', avgLbl: function (n) { return 'Average rating from ' + n + ' reviews'; }
     },
     ur: {
-      title: 'عنایہ فوڈ کچن ہی کیوں؟',
+      title: 'عنایہ فوڈ ہی کیوں؟',
       sub: 'خالص مصالحے، سچی ترکیبیں اور ایک قابلِ بھروسہ کچن۔',
       f: [
         ['پی ایف اے لائسنس یافتہ', 'لائسنس یافتہ کچن، تاکہ آپ بے فکر ہو کر پکائیں۔'],

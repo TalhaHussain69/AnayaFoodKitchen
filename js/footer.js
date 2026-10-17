@@ -15,7 +15,7 @@
 
   var T = {
     en: {
-      brand: 'Anaya Food Kitchen',
+      brand: 'Anaya Food',
       about: 'Pure, aromatic masalay inspired by Pakistani tradition, made to make every home meal special.',
       qTitle: 'Quick Links', pTitle: 'Our Masalay', cTitle: 'Get in Touch',
       nav: [['#', 'Home'], ['#our-products', 'Our Products'], ['#about-us', 'About Us'], ['#why-choose-us', 'Why Choose Us'], ['#contact-us', 'Contact Us']],
@@ -23,11 +23,11 @@
       addr: 'Vehari Road Multan, Punjab, Pakistan', pfa: 'PFA License No. 03861927', tm: 'T.M. No. 8391950',
       ctaT: 'Hungry for real flavour?', ctaP: 'Order your masalay directly on WhatsApp.', ctaB: 'Order on WhatsApp',
       ticker: ['Pure Spices', 'Authentic Taste', 'Made with Care', 'PFA Licensed', 'Har Bite Mein Asli Zaiqa'],
-      rights: '© 2026 Anaya Food Kitchen. All rights reserved.', review: 'Write a Review', top: 'Back to top', follow: 'Follow us',
+      rights: '© 2026 Anaya Food. All rights reserved.', review: 'Write a Review', top: 'Back to top', follow: 'Follow us',
       msg: 'Assalam o Alaikum, I want to order Anaya masalay.'
     },
     ur: {
-      brand: 'عنایہ فوڈ کچن',
+      brand: 'عنایہ فوڈ',
       about: 'پاکستانی روایت سے جڑے خالص اور خوشبودار مصالحے، تاکہ ہر گھر کا کھانا خاص بن جائے۔',
       qTitle: 'فوری لنکس', pTitle: 'ہمارے مصالحے', cTitle: 'رابطہ کریں',
       nav: [['#', 'ہوم'], ['#our-products', 'ہماری مصنوعات'], ['#about-us', 'ہمارے بارے میں'], ['#why-choose-us', 'ہمیں کیوں چنیں'], ['#contact-us', 'ہم سے رابطہ کریں']],
@@ -35,7 +35,7 @@
       addr: 'وہاڑی روڈ، ملتان، پنجاب، پاکستان', pfa: 'پی ایف اے لائسنس نمبر 03861927', tm: 'ٹریڈ مارک نمبر 8391950',
       ctaT: 'اصلی ذائقے کی طلب ہے؟', ctaP: 'اپنے مصالحے براہِ راست واٹس ایپ پر منگوائیں۔', ctaB: 'واٹس ایپ پر آرڈر کریں',
       ticker: ['خالص مصالحے', 'مستند ذائقہ', 'محبت سے تیار', 'پی ایف اے لائسنس یافتہ', 'ہر بائٹ میں اصلی ذائقہ'],
-      rights: '© 2026 عنایہ فوڈ کچن۔ جملہ حقوق محفوظ ہیں۔', review: 'تبصرہ لکھیں', top: 'اوپر جائیں', follow: 'ہمیں فالو کریں',
+      rights: '© 2026 عنایہ فوڈ۔ جملہ حقوق محفوظ ہیں۔', review: 'تبصرہ لکھیں', top: 'اوپر جائیں', follow: 'ہمیں فالو کریں',
       msg: 'Assalam o Alaikum, I want to order Anaya masalay.'
     }
   };

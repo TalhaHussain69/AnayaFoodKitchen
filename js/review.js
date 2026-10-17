@@ -11,7 +11,7 @@
       all: 'Anaya masalay (general)', send: 'Submit Review', note: 'Your review is sent to us on WhatsApp so our team can read it.',
       labels: ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'],
       doneT: 'Thank you!', doneP: 'Your review has been prepared in WhatsApp. Please press Send there so it reaches us.', close: 'Close',
-      msgHead: 'Assalam o Alaikum, I would like to share my review of Anaya Food Kitchen.',
+      msgHead: 'Assalam o Alaikum, I would like to share my review of Anaya Food.',
       mName: 'Name', mAddr: 'Address', mProd: 'Product', mRate: 'Rating', mRev: 'Review', btn: 'Write a Review'
     },
     ur: {
@@ -21,7 +21,7 @@
       all: 'عنایہ مصالحے (عمومی)', send: 'تبصرہ بھیجیں', note: 'آپ کا تبصرہ واٹس ایپ کے ذریعے ہم تک پہنچے گا۔',
       labels: ['', 'خراب', 'ٹھیک ٹھاک', 'اچھا', 'بہت اچھا', 'لاجواب'],
       doneT: 'شکریہ!', doneP: 'آپ کا تبصرہ واٹس ایپ میں تیار ہو گیا ہے۔ براہِ کرم وہاں "Send" دبائیں تاکہ ہم تک پہنچ جائے۔', close: 'بند کریں',
-      msgHead: 'Assalam o Alaikum, I would like to share my review of Anaya Food Kitchen.',
+      msgHead: 'Assalam o Alaikum, I would like to share my review of Anaya Food.',
       mName: 'Name', mAddr: 'Address', mProd: 'Product', mRate: 'Rating', mRev: 'Review', btn: 'تبصرہ لکھیں'
     }
   };

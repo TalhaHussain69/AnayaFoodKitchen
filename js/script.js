@@ -1,5 +1,5 @@
 /**
- * Anaya Food Kitchen — Home Hero Section
+ * Anaya Food — Home Hero Section
  * Interactive Controller:
  * - Bilingual Language Engine (English <-> Urdu with RTL)
  * - Mobile Navigation Menu & Drawer
@@ -14,7 +14,7 @@
   // ==========================================================================
   const translations = {
     en: {
-      brandName: "Anaya Food Kitchen",
+      brandName: "Anaya Food",
       navHome: "Home",
       navProducts: "Our Products",
       navAbout: "About Us",
@@ -32,7 +32,7 @@
       ribbonText: "Pure Spices • Rich Flavour",
       chipPfa: "PFA Licensed",
       chipCare: "Made with Care",
-      aboutEyebrow: "ABOUT ANAYA FOOD KITCHEN",
+      aboutEyebrow: "ABOUT ANAYA FOOD",
       aboutHeading: "Bringing Flavour to Every Kitchen",
       aboutDesc: "Pure, aromatic masalay inspired by Pakistani tradition, made to make every home meal special.",
       aboutOwnersTitle: "Meet the Owners",
@@ -48,7 +48,7 @@
       arrow: "→"
     },
     ur: {
-      brandName: "عنایہ فوڈ کچن",
+      brandName: "عنایہ فوڈ",
       navHome: "ہوم",
       navProducts: "ہماری مصنوعات",
       navAbout: "ہمارے بارے میں",
@@ -66,9 +66,9 @@
       ribbonText: "خالص مصالحہ جات • لاجواب ذائقہ",
       chipPfa: "پی ایف اے لائسنس یافتہ",
       chipCare: "محبت اور خلوص سے",
-      aboutEyebrow: "عنایہ فوڈ کچن کا تعارف",
+      aboutEyebrow: "عنایہ فوڈ کا تعارف",
       aboutHeading: "ہر کچن میں لذیذ ذائقے کی بہار",
-      aboutDesc: "عنایہ فوڈ کچن پاکستانی روایت سے جڑے خالص اور خوشبودار مصالحے پیش کرتا ہے، تاکہ ہر گھر کا کھانا خاص بن جائے۔",
+      aboutDesc: "عنایہ فوڈ پاکستانی روایت سے جڑے خالص اور خوشبودار مصالحے پیش کرتا ہے، تاکہ ہر گھر کا کھانا خاص بن جائے۔",
       aboutOwnersTitle: "ہمارے مالکان",
       aboutOwner1: "محمد ناصر عزیز",
       aboutOwner2: "محمد ندیم",
