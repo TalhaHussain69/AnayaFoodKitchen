@@ -7,9 +7,11 @@ var R={"qorma": {"sec": [{"h": "Steps of Cooking", "ol": ["Heat oil fry, onions 
 var grid=document.getElementById('products-grid'),allGrid=document.getElementById('all-products-grid'),allSec=document.getElementById('all-products'),moreBtn=document.getElementById('more-products-btn'),search=document.getElementById('product-search'),clearBtn=document.getElementById('search-clear'),countEl=document.getElementById('search-count'),FEATURED=8,root=document.documentElement,cur=null,rx=0,ry=0,auto=true;
 function L(){return root.lang==='ur'?'ur':'en'}
 function $(s,c){return (c||document).querySelector(s)}
+function box3d(p){var m=p.model,u=function(f){return 'background-image:url('+m[f]+')'};
+ return '<div class="b3d" style="--r:'+(m.h/300).toFixed(4)+';--dr:'+(m.d/300).toFixed(4)+'"><div class="b3d-fl"><div class="b3d-sway"><div class="b3d-box"><i class="f" style="'+u('front')+'"></i><i class="r" style="'+u('right')+'"></i><i class="l" style="'+u('left')+'"></i><i class="t" style="'+u('top')+'"></i><i class="bt"></i></div></div></div><span class="b3d-sh"></span></div>'}
 function card(p,i,l,t){var n=l==='ur'?p.nameUrdu:p.name,g=l==='ur'?p.taglineUrdu:p.tagline,pop=p.popup!==false;
   var ord='<a class="p-btn order" target="_blank" rel="noopener" href="'+WA+'?text='+encodeURIComponent('Assalam o Alaikum, I want to order '+p.name)+'">'+t.order+'</a>';
-  return '<article class="p-card" style="--c:'+p.color+';--d:'+Math.min(i,12)+'"><div class="p-media"><img src="'+p.img.front+'" alt="'+p.name+'" loading="lazy"></div><div class="p-body"><h3>'+n+'</h3><p>'+g+'</p><div class="p-actions'+(pop?'':' single')+'">'+(pop?'<button class="p-btn explore" data-id="'+p.id+'">'+t.explore+'</button>':'')+ord+'</div></div></article>'}
+  return '<article class="p-card" style="--c:'+p.color+';--d:'+Math.min(i,12)+'"><div class="p-media'+(p.model&&p.model.type==='box'?' has3d" role="img" aria-label="'+p.name+'">'+box3d(p):'"><img src="'+p.img.front+'" alt="'+p.name+'" loading="lazy">')+'</div><div class="p-body"><h3>'+n+'</h3><p>'+g+'</p><div class="p-actions'+(pop?'':' single')+'">'+(pop?'<button class="p-btn explore" data-id="'+p.id+'">'+t.explore+'</button>':'')+ord+'</div></div></article>'}
 var KW={'red-chilli':'lal mirch chili chilli cayenne','turmeric':'haldi','kali-mirch':'black pepper','kasuri-methi':'methi fenugreek','adrak':'ginger','lehsan':'garlic','dhania':'coriander dhaniya','fish':'machli machhli','achar':'pickle','qorma':'korma','karahi':'kadhai','chaat':'chat'};
 function norm(x){return String(x||'').toLowerCase().replace(/[\u064B-\u065F\u0670]/g,'').trim()}
 function matches(p,q){if(!q)return true;var h=norm(p.name+' '+p.nameUrdu+' '+p.tagline+' '+p.taglineUrdu+' '+p.id.replace(/-/g,' ')+' '+(KW[p.id]||''));return q.split(/\s+/).every(function(w){return h.indexOf(w)>-1})}
@@ -84,7 +86,9 @@ function fill(p){var l=L(),t=T[l],i=p.model||p.img,r=R[p.id];
 function open(id){cur=P.filter(function(p){return p.id===id})[0];if(!cur)return;fill(cur);rx=-8;ry=-25;auto=true;paint();pm.classList.add('open');document.body.style.overflow='hidden';$('.pm-close',pm).focus()}
 function close(){if(!pm.classList.contains('open'))return;auto=false;pm.classList.add('closing');setTimeout(function(){pm.classList.remove('open','closing');document.body.style.overflow=''},260)}
 pm.addEventListener('click',function(e){var b=e.target.closest('.tabs button');if(b)tab(b.dataset.t);var z=e.target.closest('.boxpic');if(z)z.classList.toggle('zoomed')});
-[grid,allGrid].forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('.explore');if(b)open(b.dataset.id)})});
+[grid,allGrid].forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('.explore');if(b)open(b.dataset.id)});
+ g.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;var c=e.target.closest('.p-card'),b=c&&c.querySelector('.b3d-box');if(!b)return;var r=c.getBoundingClientRect();b.style.setProperty('--ry',(-30+((e.clientX-r.left)/r.width-.5)*80).toFixed(1)+'deg')});
+ g.addEventListener('pointerout',function(e){var c=e.target.closest('.p-card');if(c&&!c.contains(e.relatedTarget)){var b=c.querySelector('.b3d-box');if(b)b.style.removeProperty('--ry')}})});
 pm.addEventListener('click',function(e){if(e.target===pm||e.target.closest('.pm-close'))close()});
 window.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
 vb.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;auto=false;var a=ANG[b.dataset.k];rx=a[0];ry=a[1];cube.style.transition='transform .7s ease';paint();vb.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)})});

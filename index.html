@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/review.css" />
   <link rel="stylesheet" href="css/mobile.css" />
+  <link rel="stylesheet" href="css/hero.css" />
 </head>
 <body>
   <!-- Background Ambient Glow & Botanical Watermark -->
@@ -146,6 +147,29 @@
 
   <!-- Main Hero Viewport Container (Strictly 100vh on Desktop) -->
   <main class="hero-screen" id="home-hero">
+    <!-- Hero background slider (3 images, auto-rotating) -->
+    <div class="hero-bg" id="hero-bg" aria-roledescription="carousel" aria-label="Anaya Food masalay">
+      <div class="hero-slide is-active" data-slide="1">
+        <picture>
+          <source media="(max-width: 900px), (orientation: portrait)" srcset="assets/hero/hero-1-mobile.webp" />
+          <img src="assets/hero/hero-1-laptop.webp" alt="Anaya Food masala boxes — Qorma, Biryani, Karahi, Fish, Achar and Chaat" width="1920" height="1080" decoding="async" fetchpriority="high" />
+        </picture>
+      </div>
+      <div class="hero-slide" data-slide="2">
+        <picture>
+          <source media="(max-width: 900px), (orientation: portrait)" srcset="assets/hero/hero-2-mobile.webp" />
+          <img src="assets/hero/hero-2-laptop.webp" alt="Anaya Food premium masala range on a dark stage" width="1920" height="1080" decoding="async" loading="lazy" />
+        </picture>
+      </div>
+      <div class="hero-slide" data-slide="3">
+        <picture>
+          <source media="(max-width: 900px), (orientation: portrait)" srcset="assets/hero/hero-3-mobile.webp" />
+          <img src="assets/hero/hero-3-laptop.webp" alt="Anaya Food full range of masalay and spices" width="1920" height="1080" decoding="async" loading="lazy" />
+        </picture>
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-dust" id="hero-dust" aria-hidden="true"></div>
+    </div>
     <div class="hero-container">
       
       <!-- Left Side: Hero Text Content & Actions -->
@@ -211,52 +235,8 @@
 
       </div>
 
-      <!-- Right Side: Spices Hero Visual with Decorative Ribbon -->
-      <div class="hero-visual-col" id="hero-spices-showcase">
-        <div class="spice-stage" id="spice-stage" style="--ratio:1453/814">
-          <div class="stage-arch-line" aria-hidden="true"></div>
-          <div class="stage-arch" aria-hidden="true"></div>
-
-          <!-- Floating Pure Spices Ribbon Banner -->
-        <div class="spice-ribbon-badge" id="spice-ribbon" aria-label="Pure Spices • Rich Flavour">
-          <!-- Left Botanical Leaf Accent -->
-          <svg class="ribbon-leaf-left" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M26 18 C 18 14, 10 9, 2 2" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
-            <path d="M18 14 C 15 10, 16 6, 20 5 C 22 7, 21 11, 18 14 Z" fill="#FFFFFF" opacity="0.75"/>
-            <path d="M11 9 C 9 6, 11 3, 14 3 C 15 5, 14 8, 11 9 Z" fill="#FFFFFF" opacity="0.75"/>
-          </svg>
-
-          <!-- Ribbon Center Text -->
-          <span class="ribbon-text" data-i18n="ribbonText">Pure Spices &bull; Rich Flavour</span>
-
-          <!-- Right Botanical Leaf Accent -->
-          <svg class="ribbon-leaf-right" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M2 18 C 10 14, 18 9, 26 2" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
-            <path d="M10 14 C 13 10, 12 6, 8 5 C 6 7, 7 11, 10 14 Z" fill="#FFFFFF" opacity="0.75"/>
-            <path d="M17 9 C 19 6, 17 3, 14 3 C 13 5, 14 8, 17 9 Z" fill="#FFFFFF" opacity="0.75"/>
-          </svg>
-        </div>
-
-          <div class="spice-image-wrapper">
-            <picture>
-              <source srcset="assets/heroimage.webp" type="image/webp" />
-              <img src="assets/heroimage.png" width="1453" height="814" alt="Traditional Pakistani Masalay, Vibrant Red Chili, Turmeric, Coriander Seeds, and Aromatic Spices" class="hero-spice-img" id="hero-spice-image" loading="eager" fetchpriority="high" />
-            </picture>
-          </div>
-          <div class="stage-shadow" aria-hidden="true"></div>
-
-          <div class="float-chip chip-pfa" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FE7743" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-            <span data-i18n="chipPfa">PFA Licensed</span>
-          </div>
-          <div class="float-chip chip-care" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="#FE7743" width="16" height="16"><path d="M12 21s-7-4.6-9.3-9.2C1 8.4 3 5 6.4 5c2 0 3.4 1.1 4.2 2.4h.8C12.2 6.1 13.6 5 15.6 5 19 5 21 8.4 21.3 11.8 19 16.4 12 21 12 21z"/></svg>
-            <span data-i18n="chipCare">Made with Care</span>
-          </div>
-        </div>
-      </div>
-
     </div>
+    <div class="hero-dots" id="hero-dots" role="tablist" aria-label="Hero slides"></div>
     <div class="scroll-cue" aria-hidden="true"><span></span></div>
   </main>
 
@@ -450,6 +430,7 @@
   <script src="js/why.js"></script>
   <script src="js/contact.js"></script>
   <script src="js/footer.js"></script>
+  <script src="js/hero.js"></script>
   <script src="js/review.js"></script>
 </body>
 </html>

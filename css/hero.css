@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Hero — full-bleed background slider (replaces the right-side spice image)
+   ========================================================================== */
+.hero-screen{background:#1a0a0a;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#1a0a0a}
+.hero-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1.2s ease,visibility 0s 1.2s;--tint:30,8,8;overflow:hidden}
+.hero-slide[data-slide="1"]{--tint:70,6,14}
+.hero-slide[data-slide="2"]{--tint:10,8,6}
+.hero-slide[data-slide="3"]{--tint:120,40,0}
+.hero-slide.is-active{opacity:1;visibility:visible;transition:opacity 1.2s ease,visibility 0s}
+.hero-slide picture,.hero-slide img{display:block;width:100%;height:100%}
+.hero-slide img{object-fit:cover;object-position:center;transform-origin:70% 50%;will-change:transform}
+.hero-slide.is-active img{animation:heroKen 9s ease-out both}
+.hero-slide[data-slide="2"] img{transform-origin:60% 70%}
+.hero-slide[data-slide="3"] img{transform-origin:78% 45%}
+@keyframes heroKen{from{transform:scale(1)}to{transform:scale(1.1)}}
+/* light sweep every time a slide appears */
+.hero-slide::before{content:"";position:absolute;top:-10%;bottom:-10%;left:-45%;width:30%;z-index:2;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-20deg);opacity:0}
+.hero-slide.is-active::before{animation:heroSweep 1.7s .35s ease-out both}
+@keyframes heroSweep{0%{left:-45%;opacity:1}100%{left:130%;opacity:1}}
+/* readable text: tinted gradient behind the copy */
+.hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(var(--tint,30,8,8),.86) 0%,rgba(var(--tint,30,8,8),.62) 34%,rgba(var(--tint,30,8,8),.12) 62%,transparent 78%),linear-gradient(0deg,rgba(0,0,0,.28),transparent 30%);transition:--tint 1s}
+.hero-bg[data-active="1"]{--tint:70,6,14}.hero-bg[data-active="2"]{--tint:10,8,6}.hero-bg[data-active="3"]{--tint:120,40,0}
+/* floating golden dust */
+.hero-dust{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.hero-dust i{position:absolute;bottom:-12px;border-radius:50%;background:radial-gradient(circle,#ffe7a8 0%,rgba(255,200,90,.7) 45%,transparent 70%);opacity:0;animation:dustUp linear infinite}
+@keyframes dustUp{0%{transform:translate3d(0,0,0) scale(.6);opacity:0}15%{opacity:.85}80%{opacity:.5}100%{transform:translate3d(var(--dx,20px),-105vh,0) scale(1.1);opacity:0}}
+/* dots with progress fill */
+.hero-dots{position:absolute;z-index:5;right:3.5rem;bottom:2rem;display:flex;gap:.55rem;align-items:center}
+.hero-dots button{position:relative;width:34px;height:6px;padding:0;border:0;border-radius:6px;background:rgba(255,255,255,.35);overflow:hidden;cursor:pointer;transition:width .4s,background .3s}
+.hero-dots button:hover{background:rgba(255,255,255,.55)}
+.hero-dots button::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--color-orange);transform:scaleX(0);transform-origin:left}
+.hero-dots button.is-active{width:56px}
+.hero-dots button.is-active::after{animation:dotFill var(--dur,6500ms) linear both}
+.hero-dots.paused button.is-active::after{animation-play-state:paused}
+@keyframes dotFill{to{transform:scaleX(1)}}
+.hero-dots button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* copy sits on the background now */
+.hero-screen .hero-container{grid-template-columns:1fr;position:relative;z-index:4}
+.hero-screen .heading-line-1,.hero-screen .hero-subheading{color:#fff;text-shadow:0 3px 22px rgba(0,0,0,.45)}
+.hero-screen .hero-description{color:rgba(255,255,255,.88);text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.hero-screen .hero-eyebrow{color:#ffb089;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.hero-screen .trust-badge-text{color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+/* Order on WhatsApp: glass outline -> solid white on hover (one source of truth; beats style.css + mobile.css) */
+.hero-screen .hero-actions-row .btn.btn-secondary{color:#fff;background:rgba(255,255,255,.1);background-image:none;border:1.5px solid rgba(255,255,255,.85);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);text-shadow:none;transition:background-color .3s ease,color .3s ease,border-color .3s ease,box-shadow .3s ease,transform .35s cubic-bezier(.16,1,.3,1);transition-delay:0s}
+.hero-screen .hero-actions-row .btn.btn-secondary .whatsapp-btn-icon{transition:color .3s ease,transform .3s ease}
+@media (hover:hover){
+  .hero-screen .hero-actions-row .btn.btn-secondary:hover{background:#fff;background-image:none;color:var(--color-navy);border-color:#fff;transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.3)}
+  .hero-screen .hero-actions-row .btn.btn-secondary:hover .whatsapp-btn-icon{color:#1a9d52;transform:scale(1.08)}
+}
+.hero-screen .hero-actions-row .btn.btn-secondary:active{background:#fff;background-image:none;color:var(--color-navy);border-color:#fff;transform:scale(.97);box-shadow:none}
+.hero-screen .hero-actions-row .btn.btn-secondary:active .whatsapp-btn-icon{color:#1a9d52}
+.hero-screen .hero-actions-row .btn.btn-secondary:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.hero-screen .scroll-cue{z-index:5}
+.hero-screen .hero-content-col{max-width:560px}
+.hero-screen .heading-line-1{font-size:clamp(2.6rem,3.9vw,3.9rem)}
+[dir=rtl] .hero-screen .hero-container{justify-items:end}  /* Urdu: copy stays on the left, away from the artwork focus */
+[dir=rtl] .hero-screen .hero-content-col{max-width:600px}
+
+/* phones & tablets: portrait art, copy at the bottom */
+@media (max-width:900px){
+  .hero-screen{height:100svh;min-height:640px;align-items:flex-end;padding-top:0;padding-bottom:calc(5.6rem + env(safe-area-inset-bottom,0px));overflow:hidden}
+  .hero-screen .hero-container{height:auto;padding:0 1.25rem}
+  .hero-screen .hero-content-col,[dir=rtl] .hero-screen .hero-content-col{max-width:100%;padding-bottom:0}
+  [dir=rtl] .hero-screen .hero-container{justify-items:stretch}
+  .hero-screen .heading-line-1{font-size:clamp(2.2rem,9vw,3.2rem)}
+  .hero-scrim{background:linear-gradient(0deg,rgba(var(--tint,30,8,8),.94) 0%,rgba(var(--tint,30,8,8),.8) 36%,rgba(var(--tint,30,8,8),.25) 58%,transparent 72%)}
+  .hero-dots{right:50%;left:auto;transform:translateX(50%);bottom:calc(1.6rem + env(safe-area-inset-bottom,0px))}
+  .hero-screen .hero-description{display:none}
+  .hero-screen .hero-heading{margin-bottom:.6rem}
+  .hero-screen .hero-actions-row{flex-direction:row;gap:.6rem;margin-bottom:1.1rem}
+  .hero-screen .hero-actions-row .btn{flex:1;width:auto;min-width:0;min-height:48px;padding-inline:.6rem;font-size:.9rem;justify-content:center;white-space:nowrap}
+  .hero-screen .scroll-cue{display:none}
+}
+/* phones/tablets (portrait): the artwork gets the top part, the copy gets its own calm panel below it.
+   --art-h is measured in hero.js from where the copy starts, so it adapts to any screen / language. */
+@media (max-width:900px) and (min-height:521px){
+  .hero-slide{background:rgb(var(--tint))}
+  .hero-slide[data-slide="1"],.hero-bg[data-active="1"]{--tint:30,10,62}
+  .hero-slide[data-slide="3"],.hero-bg[data-active="3"]{--tint:5,40,30}
+  .hero-slide picture,.hero-slide img{height:var(--art-h,66%)}
+  .hero-slide img,.hero-slide[data-slide] img{object-position:50% 0;transform-origin:50% 0}
+  .hero-slide.is-active img{animation-name:heroKenM}
+  .hero-scrim{background:linear-gradient(180deg,rgba(0,0,0,.38) 0,transparent 90px),linear-gradient(180deg,rgba(var(--tint),0) 0,rgba(var(--tint),0) calc(var(--art-h,66%) - 150px),rgba(var(--tint),.86) calc(var(--art-h,66%) - 56px),rgb(var(--tint)) var(--art-h,66%),rgb(var(--tint)) 100%)}
+}
+@keyframes heroKenM{from{transform:scale(1)}to{transform:scale(1.06)}}
+/* short phones: drop the small label + second tagline so the artwork keeps its room */
+@media (max-width:900px) and (max-height:700px) and (min-height:521px){
+  .hero-screen .hero-subheading,.hero-screen .eyebrow-wrapper{display:none}
+  .hero-screen .hero-heading{margin-bottom:1rem}
+  .hero-screen{padding-bottom:calc(3.3rem + env(safe-area-inset-bottom,0px))}
+  .hero-dots{bottom:calc(1.1rem + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:420px){
+  .hero-screen .heading-line-1{font-size:clamp(2rem,9.5vw,2.5rem)}
+  .hero-screen .hero-actions-row .btn{font-size:.82rem;gap:.35rem}
+  .hero-screen .hero-actions-row .arrow-icon{display:none}
+}
+@media (max-height:520px) and (orientation:landscape) and (max-width:900px){.hero-screen{min-height:0;height:auto}}
+@media (prefers-reduced-motion:reduce){.hero-slide img,.hero-slide::before,.hero-dust i{animation:none!important}.hero-slide{transition-duration:.01s}}
+.hero-screen .hero-container{pointer-events:none}.hero-screen .hero-content-col{pointer-events:auto}
+.hero-dots{z-index:6}
+
+/* navbar over the hero image: same dark glass as the scrolled state */
+.navbar-wrapper .nav-container{--nav-fg:#F3EFE8;background:rgba(26,44,56,.58);border-color:rgba(255,255,255,.14);box-shadow:0 14px 34px rgba(0,0,0,.28)}
+.navbar-wrapper .nav-menu{background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.navbar-wrapper .lang-toggle-box{background:rgba(255,255,255,.08)}
