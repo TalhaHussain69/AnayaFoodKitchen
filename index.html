@@ -18,11 +18,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kaushan+Script&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Satisfy&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
   <link rel="stylesheet" href="css/products.css" />
   <link rel="stylesheet" href="css/why.css" />
   <link rel="stylesheet" href="css/contact.css" />
-  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/footer.css?v=3" />
   <link rel="stylesheet" href="css/review.css" />
   <link rel="stylesheet" href="css/mobile.css" />
   <link rel="stylesheet" href="css/hero.css" />
@@ -248,7 +248,6 @@
       <div class="more-wrap">
         <button type="button" class="more-btn" id="more-products-btn" aria-expanded="false" aria-controls="all-products">
           <span class="more-label" data-ps="more">More Products</span>
-          <span class="more-count" aria-hidden="true">+6</span>
           <svg class="more-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
       </div>
@@ -281,91 +280,19 @@
 
   <!-- About Us Section -->
   <section class="about-section" id="about-us" aria-labelledby="about-main-heading">
-        <div class="about-bg-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
     <div class="about-container">
-      <div class="about-grid">
-        
-        <!-- Left Column: Story & Content -->
-        <div class="about-content-col">
-          <!-- Small Label with Signature Orange Accent -->
-          <div class="about-eyebrow-wrapper">
-            <span class="about-eyebrow-line" aria-hidden="true"></span>
-            <span class="about-eyebrow-text" data-i18n="aboutEyebrow">ABOUT ANAYA FOOD</span>
-          </div>
 
-          <!-- Main Heading -->
-          <h2 class="about-heading" id="about-main-heading" data-i18n="aboutHeading">
-            Bringing Flavour to Every Kitchen
-          </h2>
-
-          <!-- Description Paragraph -->
-          <p class="about-description" data-i18n="aboutDesc">
-            Pure, aromatic masalay inspired by Pakistani tradition, made to make every home meal special.
-          </p>
-
-          <!-- Distinctive Brand Highlights / Pillars -->
-          <div class="about-pillars-row" aria-label="Brand Highlights">
-            <div class="about-pillar-item">
-              <span class="about-pillar-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
-                  <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
-                  <path d="M9 12l2 2 4-4"/>
-                </svg>
-              </span>
-              <span class="about-pillar-label" data-i18n="aboutPillarPure">100% Pure Spices</span>
-            </div>
-
-            <div class="about-pillar-item">
-              <span class="about-pillar-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-              </span>
-              <span class="about-pillar-label" data-i18n="aboutPillarRecipe">Authentic Recipes</span>
-            </div>
-
-            <div class="about-pillar-item">
-              <span class="about-pillar-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                </svg>
-              </span>
-              <span class="about-pillar-label" data-i18n="aboutPillarFresh">Aroma Locked & Fresh</span>
-            </div>
-          </div>
-
-          <!-- Owners -->
-          <div class="about-owners" aria-labelledby="about-owners-title">
-            <p class="about-owners-title" id="about-owners-title" data-i18n="aboutOwnersTitle">Meet the Owners</p>
-            <div class="about-owners-grid">
-              <div class="about-owner-card">
-                <span class="about-owner-avatar" aria-hidden="true"><span>NA</span></span>
-                <div class="about-owner-info">
-                  <span class="about-owner-name" data-i18n="aboutOwner1">M Nasir Aziz</span>
-                  <span class="about-owner-role" data-i18n="aboutOwnerRole">Owner</span>
-                </div>
-              </div>
-              <div class="about-owner-card">
-                <span class="about-owner-avatar" aria-hidden="true"><span>ND</span></span>
-                <div class="about-owner-info">
-                  <span class="about-owner-name" data-i18n="aboutOwner2">M Nadeem</span>
-                  <span class="about-owner-role" data-i18n="aboutOwnerRole2">Owner</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Primary CTA Button (Scrolls smoothly to #our-products) -->
-          <div class="about-actions-row">
-            <a href="#our-products" class="about-primary-btn" id="about-btn-explore" aria-label="Explore Our Masalay">
-              <span data-i18n="aboutBtnExplore">Explore Our Masalay</span>
-              <span class="about-btn-arrow" aria-hidden="true">→</span>
-            </a>
-          </div>
+      <header class="about-head">
+        <div class="about-eyebrow-wrapper">
+          <span class="about-eyebrow-line" aria-hidden="true"></span>
+          <span class="about-eyebrow-text" data-i18n="aboutEyebrow">ABOUT ANAYA FOOD</span>
+          <span class="about-eyebrow-line" aria-hidden="true"></span>
         </div>
+        <h2 class="about-heading" id="about-main-heading" data-i18n="aboutHeading">Bringing Flavour to Every Kitchen</h2>
+        <p class="about-description" data-i18n="aboutDesc">Pure, aromatic masalay inspired by Pakistani tradition, made to make every home meal special.</p>
+      </header>
 
-        <!-- Right Column: Visual Composition -->
+      <div class="about-grid">
         <div class="about-visual-col">
           <div class="about-visual-card">
             <!-- Subtle geometric accent outline frame -->
@@ -409,6 +336,73 @@
           </div>
         </div>
 
+      
+        
+
+        <div class="about-content-col">
+          <div class="about-pillars-row" aria-label="Brand Highlights">
+            <div class="about-pillar-item">
+              <span class="about-pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
+                  <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <span class="about-pillar-label" data-i18n="aboutPillarPure">100% Pure Spices</span>
+            </div>
+
+            <div class="about-pillar-item">
+              <span class="about-pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </span>
+              <span class="about-pillar-label" data-i18n="aboutPillarRecipe">Authentic Recipes</span>
+            </div>
+
+            <div class="about-pillar-item">
+              <span class="about-pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </span>
+              <span class="about-pillar-label" data-i18n="aboutPillarFresh">Aroma Locked & Fresh</span>
+            </div>
+          </div>
+
+          
+          <!-- Owners -->
+          <div class="about-owners" aria-labelledby="about-owners-title">
+            <p class="about-owners-title" id="about-owners-title" data-i18n="aboutOwnersTitle">Meet the Owners</p>
+            <div class="about-owners-grid">
+              <div class="about-owner-card">
+                <span class="about-owner-avatar" aria-hidden="true"><span>NA</span></span>
+                <div class="about-owner-info">
+                  <span class="about-owner-name" data-i18n="aboutOwner1">M Nasir Aziz</span>
+                  <span class="about-owner-role" data-i18n="aboutOwnerRole">Owner</span>
+                </div>
+              </div>
+              <div class="about-owner-card">
+                <span class="about-owner-avatar" aria-hidden="true"><span>ND</span></span>
+                <div class="about-owner-info">
+                  <span class="about-owner-name" data-i18n="aboutOwner2">M Nadeem</span>
+                  <span class="about-owner-role" data-i18n="aboutOwnerRole2">Owner</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- Primary CTA Button (Scrolls smoothly to #our-products) -->
+          <div class="about-actions-row">
+            <a href="#our-products" class="about-primary-btn" id="about-btn-explore" aria-label="Explore Our Masalay">
+              <span data-i18n="aboutBtnExplore">Explore Our Masalay</span>
+              <span class="about-btn-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        
+        </div>
       </div>
     </div>
   </section>
@@ -424,12 +418,12 @@
 
   <!-- JavaScript -->
   <script src="js/script.js"></script>
-  <script src="js/products-data.js"></script>
+  <script src="js/products-data.js?v=3"></script>
   <script src="js/products-info.js"></script>
-  <script src="js/products.js"></script>
+  <script src="js/products.js?v=4"></script>
   <script src="js/why.js"></script>
-  <script src="js/contact.js"></script>
-  <script src="js/footer.js"></script>
+  <script src="js/contact.js?v=3"></script>
+  <script src="js/footer.js?v=3"></script>
   <script src="js/hero.js"></script>
   <script src="js/review.js"></script>
 </body>

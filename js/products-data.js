@@ -16,17 +16,17 @@ window.ANAYA_PRODUCTS = [
     "taglineUrdu": "شاہی اور لذیذ قورمہ کے لیے روایتی مصالحہ",
     "color": "#7b2a91",
     "img": {
-      "front": "assets/products/3d/qorma-front.jpg?v=2"
+      "front": "assets/products/3d/qorma-front.jpg?v=4"
     },
     "model": {
       "type": "box",
-      "h": 450,
-      "d": 82,
-      "front": "assets/products/3d/qorma-front.jpg?v=2",
-      "top": "assets/products/3d/qorma-top.jpg?v=2",
-      "right": "assets/products/3d/qorma-right.jpg?v=2",
-      "back": "assets/products/3d/qorma-back.jpg?v=2",
-      "left": "assets/products/3d/qorma-left.jpg?v=2"
+      "h": 441,
+      "d": 88,
+      "front": "assets/products/3d/qorma-front.jpg?v=4",
+      "top": "assets/products/3d/qorma-top.jpg?v=4",
+      "right": "assets/products/3d/qorma-right.jpg?v=4",
+      "back": "assets/products/3d/qorma-back.jpg?v=4",
+      "left": "assets/products/3d/qorma-left.jpg?v=4"
     }
   },
   {
@@ -37,17 +37,17 @@ window.ANAYA_PRODUCTS = [
     "taglineUrdu": "خوشبودار اور ذائقے دار روایتی بریانی کے لیے",
     "color": "#f29b12",
     "img": {
-      "front": "assets/products/3d/biryani-front.jpg?v=2"
+      "front": "assets/products/3d/biryani-front.jpg?v=4"
     },
     "model": {
       "type": "box",
-      "h": 450,
-      "d": 82,
-      "front": "assets/products/3d/biryani-front.jpg?v=2",
-      "top": "assets/products/3d/biryani-top.jpg?v=2",
-      "right": "assets/products/3d/biryani-right.jpg?v=2",
-      "back": "assets/products/3d/biryani-back.jpg?v=2",
-      "left": "assets/products/3d/biryani-left.jpg?v=2"
+      "h": 441,
+      "d": 88,
+      "front": "assets/products/3d/biryani-front.jpg?v=4",
+      "top": "assets/products/3d/biryani-top.jpg?v=4",
+      "right": "assets/products/3d/biryani-right.jpg?v=4",
+      "back": "assets/products/3d/biryani-back.jpg?v=4",
+      "left": "assets/products/3d/biryani-left.jpg?v=4"
     }
   },
   {
@@ -58,17 +58,17 @@ window.ANAYA_PRODUCTS = [
     "taglineUrdu": "چٹخارے دار اور خوشبودار کڑاہی گوشت کے لیے",
     "color": "#b3141c",
     "img": {
-      "front": "assets/products/3d/karahi-front.jpg?v=2"
+      "front": "assets/products/3d/karahi-front.jpg?v=4"
     },
     "model": {
       "type": "box",
-      "h": 450,
-      "d": 82,
-      "top": "assets/products/3d/karahi-top.jpg?v=2",
-      "front": "assets/products/3d/karahi-front.jpg?v=2",
-      "right": "assets/products/3d/karahi-right.jpg?v=2",
-      "back": "assets/products/3d/karahi-back.jpg?v=2",
-      "left": "assets/products/3d/karahi-left.jpg?v=2"
+      "h": 441,
+      "d": 88,
+      "top": "assets/products/3d/karahi-top.jpg?v=4",
+      "front": "assets/products/3d/karahi-front.jpg?v=4",
+      "right": "assets/products/3d/karahi-right.jpg?v=4",
+      "back": "assets/products/3d/karahi-back.jpg?v=4",
+      "left": "assets/products/3d/karahi-left.jpg?v=4"
     }
   },
   {
@@ -121,17 +121,17 @@ window.ANAYA_PRODUCTS = [
     "taglineUrdu": "ہر قسم کی چاٹ اور پھلوں کو لاجواب بنائیں",
     "color": "#d8141f",
     "img": {
-      "front": "assets/products/3d/chaat-front.jpg?v=2"
+      "front": "assets/products/3d/chaat-front.jpg?v=4"
     },
     "model": {
       "type": "box",
-      "h": 450,
-      "d": 82,
-      "top": "assets/products/3d/chaat-top.jpg?v=2",
-      "front": "assets/products/3d/chaat-front.jpg?v=2",
-      "right": "assets/products/3d/chaat-right.jpg?v=2",
-      "back": "assets/products/3d/chaat-back.jpg?v=2",
-      "left": "assets/products/3d/chaat-left.jpg?v=2"
+      "h": 441,
+      "d": 88,
+      "top": "assets/products/3d/chaat-top.jpg?v=4",
+      "front": "assets/products/3d/chaat-front.jpg?v=4",
+      "right": "assets/products/3d/chaat-right.jpg?v=4",
+      "back": "assets/products/3d/chaat-back.jpg?v=4",
+      "left": "assets/products/3d/chaat-left.jpg?v=4"
     }
   },
   {

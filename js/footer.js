@@ -20,7 +20,7 @@
       qTitle: 'Quick Links', pTitle: 'Our Masalay', cTitle: 'Get in Touch',
       nav: [['#', 'Home'], ['#our-products', 'Our Products'], ['#about-us', 'About Us'], ['#why-choose-us', 'Why Choose Us'], ['#contact-us', 'Contact Us']],
       prods: { qorma: 'Qorma Masala', biryani: 'Biryani Masala', karahi: 'Karahi Gosht Masala', fish: 'Fish Masala', achar: 'Achar Gosht Masala', chaat: 'Chaat Masala' },
-      addr: 'Vehari Road Multan, Punjab, Pakistan', pfa: 'PFA License No. 03861927', tm: 'T.M. No. 8391950',
+      addr: 'Vehari Road Multan, Punjab, Pakistan', pfa: 'PFA License No. 03861927', tm: 'T.M. No. 891950',
       ctaT: 'Hungry for real flavour?', ctaP: 'Order your masalay directly on WhatsApp.', ctaB: 'Order on WhatsApp',
       ticker: ['Pure Spices', 'Authentic Taste', 'Made with Care', 'PFA Licensed', 'Har Bite Mein Asli Zaiqa'],
       rights: '© 2026 Anaya Food. All rights reserved.', review: 'Write a Review', top: 'Back to top', follow: 'Follow us',
@@ -32,7 +32,7 @@
       qTitle: 'فوری لنکس', pTitle: 'ہمارے مصالحے', cTitle: 'رابطہ کریں',
       nav: [['#', 'ہوم'], ['#our-products', 'ہماری مصنوعات'], ['#about-us', 'ہمارے بارے میں'], ['#why-choose-us', 'ہمیں کیوں چنیں'], ['#contact-us', 'ہم سے رابطہ کریں']],
       prods: { qorma: 'قورمہ مصالحہ', biryani: 'بریانی مصالحہ', karahi: 'کڑاہی گوشت مصالحہ', fish: 'مچھلی مصالحہ', achar: 'اچار گوشت مصالحہ', chaat: 'چاٹ مصالحہ' },
-      addr: 'وہاڑی روڈ، ملتان، پنجاب، پاکستان', pfa: 'پی ایف اے لائسنس نمبر 03861927', tm: 'ٹریڈ مارک نمبر 8391950',
+      addr: 'وہاڑی روڈ، ملتان، پنجاب، پاکستان', pfa: 'پی ایف اے لائسنس نمبر 03861927', tm: 'ٹریڈ مارک نمبر 891950',
       ctaT: 'اصلی ذائقے کی طلب ہے؟', ctaP: 'اپنے مصالحے براہِ راست واٹس ایپ پر منگوائیں۔', ctaB: 'واٹس ایپ پر آرڈر کریں',
       ticker: ['خالص مصالحے', 'مستند ذائقہ', 'محبت سے تیار', 'پی ایف اے لائسنس یافتہ', 'ہر بائٹ میں اصلی ذائقہ'],
       rights: '© 2026 عنایہ فوڈ۔ جملہ حقوق محفوظ ہیں۔', review: 'تبصرہ لکھیں', top: 'اوپر جائیں', follow: 'ہمیں فالو کریں',
@@ -64,9 +64,9 @@
 
   function render() {
     var t = T[L()], wp = '#16262F';
-    var wave = '<svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="' + wp + '" d="M0 30 C 180 0, 360 60, 540 30 S 900 0, 1080 30 S 1260 60, 1440 30 S 1620 0, 1800 30 S 2160 60, 2340 30 S 2700 0, 2880 30 V60 H0z"/></svg>';
+    var wave = '';
     ft.innerHTML =
-      '<div class="ft-wave" aria-hidden="true">' + wave + wave + '</div>' +
+      '<div class="ft-line" aria-hidden="true"></div>' +
       '<div class="ft-dots" aria-hidden="true">' + dots() + '</div>' +
       '<div class="ft-inner">' +
         '<div class="ft-grid">' +
